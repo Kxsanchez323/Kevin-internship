@@ -44,6 +44,7 @@ const Home = () => {
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchHotCollections();
     fetchNewItems();
     fetchTopSellers();
@@ -53,12 +54,12 @@ const Home = () => {
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
-        <Landing />
-        <LandingIntro />
+        <Landing/>
+        <LandingIntro/>
         <HotCollections hotCollections={hotCollections} loadinghotCollections={loadinghotCollections}/>
         <NewItems newItems={newItems} newItemsLoading={newItemsLoading} />
         <TopSellers topSellers={topSellers} loadingtopSellers={loadingtopSellers}/>
-        <BrowseByCategory />
+        <BrowseByCategory/>
       </div>
     </div>
   );

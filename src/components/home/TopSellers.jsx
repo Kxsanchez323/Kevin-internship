@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "../UI/Skeleton";
+import Aos from "aos";
 
 const TopSellers = ({ topSellers, loadingtopSellers }) => {
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <section id="section-popular" className="pb-5">
       <div className="container">
@@ -13,7 +19,7 @@ const TopSellers = ({ topSellers, loadingtopSellers }) => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12" data-aos="fade-in" data-aos-duration="1000">
             <ol className="author_list">
               {loadingtopSellers
                 ? new Array(12).fill(0).map((_, index) => (
